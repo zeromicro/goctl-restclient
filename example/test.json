@@ -1,0 +1,33 @@
+@baseUrl = https://example.com/api
+
+
+
+
+###
+# @name register 注册
+POST {{baseUrl}}/api/user/register HTTP/1.1
+Content-Type: application/json
+
+{
+	username : "admin", 
+	password : "admin123", 
+	mobile : ""
+}
+
+###
+# @name login 登录
+POST {{baseUrl}}/api/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+	username : "", 
+	password : ""
+}
+
+###
+# @name getUserInfo 获取用户信息
+GET {{baseUrl}}/api/user/:id HTTP/1.1
+
+###
+# @name searchUser 用户搜索
+GET {{baseUrl}}/api/user/search HTTP/1.1
