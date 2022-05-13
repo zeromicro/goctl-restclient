@@ -1,5 +1,3 @@
-@baseUrl = https://example.com/api
-
 
 << range .Service.Groups >>
 
@@ -19,12 +17,12 @@
 
 <<- define "method_get" >>
 # @name << .Handler >> << .JoinedDoc >>
-<<toUpper .Method>> {{baseUrl}}<<.Path>> HTTP/1.1
+<<toUpper .Method>> {{$dotenv baseUrl}}<<.Path>> HTTP/1.1
 <<- end ->>
 
 <<- define "method_post" >>
 # @name << .Handler >> << .JoinedDoc >>
-<<toUpper .Method>> {{baseUrl}}<<.Path>> HTTP/1.1
+<<toUpper .Method>> {{$dotenv baseUrl}}<<.Path>> HTTP/1.1
 Content-Type: <<contentType .>>
 
 << genTypes . >>
